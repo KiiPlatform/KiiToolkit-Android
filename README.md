@@ -10,7 +10,10 @@ Check out the repository and add the Android libraries that you're interested in
 > For installation instructions, check out our [Getting Started Guide](https://github.com/KiiPlatform/KiiToolkit-Android/wiki/Getting-Started "Getting Started Guide")
 
 ### Is there documentation?
-Not yet (soon) 
+Not yet (soon)
+
+### Is there an iOS version?
+Yes, see [Kii Toolikit for iOS](https://github.com/KiiPlatform/KiiToolkit-iOS "Kii Tollkit for iOS")
 
 ### What is Kii Cloud?
 [Kii Cloud](http://developer.kii.com "Kii Cloud") is a Mobile-Backend-as-a-Service (MBaaS) which provides client SDKs for you to build a cloud-connected application without ever building or maintaining any servers or databases. Kii Cloud scales with your app and provides a reliable backend, allowing you to get your app up and running in a fraction of the time. Learn more at [http://developer.kii.com](http://developer.kii.com "Kii Cloud")
