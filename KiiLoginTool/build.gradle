@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.6'
+}
+archivesBaseName = 'KiiLoginTool'
+version = '1.0.0'
+
+sourceCompatibility = '1.6'
+targetCompatibility = '1.6'
+
+dependencies {
+    compile files("${System.getenv('ANDROID_HOME')}/platforms/android-14/android.jar")
+    compile files("libs/KiiSDK_2.1.8.jar")
+}
+
+

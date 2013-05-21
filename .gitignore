@@ -11,6 +11,9 @@
 # generated files
 bin/
 gen/
+KiiLoginTool/build/*
+KiiLoginTool/.gradle/*
+KiiLoginTool/.settings/*
 
 # Local configuration file (sdk path, etc)
 local.properties

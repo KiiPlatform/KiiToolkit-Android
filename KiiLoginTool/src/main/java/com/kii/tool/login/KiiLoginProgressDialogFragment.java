@@ -2,11 +2,19 @@ package com.kii.tool.login;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 public class KiiLoginProgressDialogFragment extends DialogFragment {
-    public static KiiLoginProgressDialogFragment newInstance() {
+    private static final String ARGS_TEXT = "text";
+
+    public static KiiLoginProgressDialogFragment newInstance(String text) {
         KiiLoginProgressDialogFragment fragment = new KiiLoginProgressDialogFragment();
+        
+        Bundle args = new Bundle();
+        args.putString(ARGS_TEXT, text);
+        fragment.setArguments(args);
+        
         return fragment;
     }
 
@@ -16,8 +24,12 @@ public class KiiLoginProgressDialogFragment extends DialogFragment {
      */
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        Dialog dialog = new Dialog(getActivity());
-        dialog.setContentView(R.layout.kii_tool_progress);
+        // get args
+        Bundle args = getArguments();
+        String message = args.getString(ARGS_TEXT);
+        
+        ProgressDialog dialog = new ProgressDialog(getActivity());
+        dialog.setMessage(message);
         return dialog;
     }
     
