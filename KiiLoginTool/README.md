@@ -66,3 +66,62 @@ On both platform, you can find KiiLoginTool-x.y.z.jar file on build/libs folder.
 
 ## If you want to let user login by Email...
 Please call `KiiLoginFragment#setType(int type)` before calling `FragmentTransaction#replace(id, fragment)`
+
+## If you want to use custom layout
+You can set your custom layout by overriding `Fragment#onCreateView()`. If you use custom layout, please override the following methods.
+
+* getIdentifier
+* getPassword
+* getLoginButton
+
+Here is the example of using custom layout.
+
+    public class GoodLoginFragment extends KiiLoginFragment {
+        public static GoodLoginFragment newInstance() {
+            GoodLoginFragment fragment = new GoodLoginFragment();
+            return fragment;
+        }
+ 
+        private EditText usernameEdit;
+        private EditText passwordEdit;
+        private Button loginButton;
+     
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            View root = inflater.inflate(R.layout.fragment_login, container, false);
+     
+            usernameEdit = (EditText) root.findViewById(R.id.edit_username);
+            passwordEdit = (EditText) root.findViewById(R.id.edit_password);
+            loginButton = (Button) root.findViewById(R.id.button_login);
+     
+            return root;
+        }
+     
+        @Override
+        protected String getIdentifier() {
+            return usernameEdit.getText().toString();
+        }
+     
+        @Override
+        protected String getPassword() {
+            return passwordEdit.getText().toString();
+        }
+     
+        @Override
+        protected View getLoginButton() {
+            return loginButton;
+        }
+     
+        @Override
+        protected void onLoginSucceeded(KiiUser user) {
+            super.onLoginSucceeded(user);
+            Toast.makeText(getActivity(), "Login succeeded", Toast.LENGTH_LONG).show();
+        }
+     
+        @Override
+        protected void onLoginError(int errorCode) {
+            super.onLoginError(errorCode);
+            Toast.makeText(getActivity(), "Login failed code=" + errorCode, Toast.LENGTH_LONG).show();
+        }
+    }
+
