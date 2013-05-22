@@ -5,6 +5,19 @@ KiiLoginTool provides easy-to-use Login/Registration Fragment. You can add Login
 ## Requirement
 * Android 3.0 or more - KiiLoginTool uses android.app.Fragment.
 
+## How to build jar file
+### Windows
+    git clone https://github.com/KiiPlatform/KiiToolkit-Android.git toolkit
+    cd toolkit/KiiLoginTool
+    gradlew.bat
+
+### Mac / Linux
+    git clone https://github.com/KiiPlatform/KiiToolkit-Android.git toolkit
+    cd toolkit/KiiLoginTool
+    ./gradlew 
+
+On both platform, you can find KiiLoginTool-x.y.z.jar file on build/libs folder.
+
 ## getting started
 ### Add new Fragment that extends KiiLoginFragment
     public class MyLoginFragment extends KiiLoginFragment {
