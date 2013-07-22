@@ -16,7 +16,7 @@ KiiLoginTool provides easy-to-use Login/Registration Fragment. You can add Login
     cd toolkit/KiiLoginTool
     ./gradlew 
 
-On both platform, you can find KiiLoginTool-x.y.z.jar file on build/libs folder.
+On both platform, you can find KiiLoginTool-x.y.z.jar file on build/libs folder. Please, notice that ANDROID_HOME environment variable should be set to your Android SDK path before running this script.
 
 ## getting started
 ### Add new Fragment that extends KiiLoginFragment
@@ -124,4 +124,43 @@ Here is the example of using custom layout.
             Toast.makeText(getActivity(), "Login failed code=" + errorCode, Toast.LENGTH_LONG).show();
         }
     }
+
+## Creating a Registration fragment
+
+KiiLoginFragment can be used for both Login actions and/or Registration actions. If you want to create a Registration fragment just simply:
+
+
+### Override registration callbacks
+
+    public class MyLoginFragment extends KiiLoginFragment {
+	...
+	    /**
+     * This method will be called just before registering the user in the Cloud
+     * Developer can set extra fields such as age, gender to KiiUser.
+     */
+    @Override
+    protected void onPrepareRegistration(KiiUser user) {
+        
+    }
+    
+    /**
+     * This method will be called when register is succeeded.
+     */
+    @Override
+    protected void onRegisterSucceeded(KiiUser user) {
+        
+    }
+
+    /**
+     * This method will be called when error happens on register.
+     */
+    @Override
+    protected void onRegisterError(int errorCode) {
+        
+    }
+
+## If you want to use custom layout
+You can set your custom layout by overriding `Fragment#onCreateView()`. If you use custom layout, please override the following method.
+
+getRegisterButton()
 

@@ -15,7 +15,7 @@ import com.kii.cloud.storage.callback.KiiUserCallBack;
 /**
  * A fragment that displays a form for login KiiCloud
  */
-public class KiiLoginFragment extends Fragment {
+public class KiiLoginFragment extends DialogFragment {
     
     private EditText identifierEdit;
     private EditText passwordEdit;
@@ -42,7 +42,7 @@ public class KiiLoginFragment extends Fragment {
         public static final int LOGIN_FAILED = 100;
         public static final int REGISTER_FAILED = 200;
     }
-    
+
     /*
      * (non-Javadoc)
      * @see android.app.Fragment#onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
@@ -132,7 +132,7 @@ public class KiiLoginFragment extends Fragment {
      * this method must be overridden, too.
      * @return button for register
      */
-    private View getRegisterButton() {
+    protected View getRegisterButton() {
         return registerButton;
     }    
     
@@ -295,6 +295,7 @@ public class KiiLoginFragment extends Fragment {
                 super.onRegisterCompleted(token, user, exception);
                 onDismissProgress();
                 if (exception != null) {
+                	exception.printStackTrace();
                     onRegisterError(ErrorCode.REGISTER_FAILED);
                     return;
                 }
@@ -321,7 +322,7 @@ public class KiiLoginFragment extends Fragment {
      * Developer can set extra fields such as age, gender to KiiUser.
      * @param user 
      */
-    private void onPrepareRegistration(KiiUser user) {
+    protected void onPrepareRegistration(KiiUser user) {
         
     }
     
