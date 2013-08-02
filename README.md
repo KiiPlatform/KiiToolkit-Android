@@ -10,7 +10,7 @@ Check out the repository and add the Android libraries that you're interested in
 > For installation instructions, check out our [Getting Started Guide](https://github.com/KiiPlatform/KiiToolkit-Android/wiki/Getting-Started "Getting Started Guide")
 
 ### Is there documentation?
-Not yet (soon)
+Documentation can be found [here](https://github.com/KiiPlatform/KiiToolkit-Android/tree/master/KiiLoginTool/javadoc)
 
 ### Is there an iOS version?
 Yes, see [Kii Toolikit for iOS](https://github.com/KiiPlatform/KiiToolkit-iOS "Kii Tollkit for iOS")
