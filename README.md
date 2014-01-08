@@ -23,3 +23,7 @@ Developers at Kii are the main contributors, but it is completely open source un
 
 ### Is it an official part of Kii Cloud?
 KiiToolkit is created to help developers, and is subject to change at any time. The project is developed separately and does not have any guarantees of maintenance or upgrades as Kii Cloud evolves.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/KiiPlatform/kiitoolkit-android/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
